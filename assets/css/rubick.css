@@ -2875,7 +2875,8 @@ a.carousel-control span.fa {
 
 .section-header .separator.line-separator:before,
 .section-header .separator.line-separator:after {
-  border-color: white;
+  border-color: #FFF;
+  box-shadow: 3px 3px 1px #014e96;;
 }
 
 .section-we-are-1 .parallax,
@@ -4055,7 +4056,7 @@ body.noscroll {
 
 .section-numbers-2 .separator,
 .section-numbers-3 .separator {
-  color: #fff;
+  color: #FFF;
 }
 
 .section-numbers-2 .separator.line-separator:before,
