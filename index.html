@@ -900,6 +900,22 @@
         </div>
     </div>
 
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <span class="fechar" onclick="fecharModal(1)">&times;</span>
+            <h2>Sucesso!</h2>
+            <p>O seu e-mail foi enviado com sucesso.</p>
+        </div>
+    </div>
+
+    <div id="modal2" class="modal">
+        <div class="modal-content">
+            <span class="fechar" onclick="fecharModal(2)">&times;</span>
+            <h2>Falha!</h2>
+            <p>O envio de seu email falhou</p>
+        </div>
+    </div>
+
 </body>
 <!--   core js files    -->
 <script src="assets/js/jquery-1.11.2.min.js" type="text/javascript"></script>
@@ -943,17 +959,56 @@
             state: selectedState
         };
 
+        let chaves = Object.keys(data)
+        let erros = 0
+        function validarEmail(email) {
+            const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
+            return regex.test(email)
+        }
+
+        chaves.forEach((chave) => {
+            const valor = data[chave].trim()
+
+            if (valor === "") {
+                abrirModal(2)
+                erros++
+            } else if (chave === "reply_to" && !validarEmail(valor)) {
+                abrirModal(2)
+                erros++
+            }
+        });
+        if(erros > 0){return}
         emailjs.init('eY6or0ynOguhhy7M1');
 
         // Enviando o e-mail com os dados
         emailjs.send('service_m7ojo0e', 'template_jvfdyv9', data)
             .then(function (response) {
-                console.log('E-mail enviado com sucesso!', response.status, response.text);
+                abrirModal(1)
             }, function (error) {
-                console.log('Falha ao enviar e-mail.', error)
+                abrirModal(2)
             });
 
+
     }
+
+    function abrirModal(modal) {
+        document.getElementById(`modal${modal}`).style.display = "block";
+    }
+
+    function fecharModal(modal) {
+        document.getElementById(`modal${modal}`).style.display = "none"
+        modal == 1 ? location.reload() : null
+    }
+
+    // Fechar o modal ao clicar fora do conteúdo
+    window.onclick = function (event) {
+        let modal1 = document.getElementById("modal1")
+        let modal2 = document.getElementById("modal2")
+
+        if ([modal1, modal2].includes(event.target)) {
+            fecharModal(event.target == modal1 ? 1 : 2)
+        }
+    };
 </script>
 
 </html>
