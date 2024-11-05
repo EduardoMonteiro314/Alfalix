@@ -92,7 +92,7 @@ body>.navbar-collapse a {
   transition: all 150ms linear;
 }
 
-.btn-morphing .fa,
+.btn-morphing .fab,
 .btn-morphing .circle,
 .gsdk-collapse {
   -webkit-transition: all 370ms linear;
@@ -102,7 +102,7 @@ body>.navbar-collapse a {
   transition: all 370ms linear;
 }
 
-.fa {
+.fab {
   width: 18px;
   text-align: center;
 }
@@ -508,7 +508,7 @@ fieldset[disabled] .form-control {
   margin: 16px 3px;
 }
 
-.navbar .navbar-nav>li>a [class^="fa"] {
+.navbar .navbar-nav>li>a [class^="fab"] {
   font-size: 18px;
   position: relative;
   top: 1px;
@@ -968,7 +968,7 @@ fieldset[disabled] .form-control {
   padding: 8px 9px;
 }
 
-.btn-social .fa {
+.btn-social .fab {
   font-size: 18px;
   vertical-align: middle;
   display: inline-block;
@@ -983,7 +983,7 @@ fieldset[disabled] .form-control {
   font-size: 14px;
 }
 
-.btn-social.btn-simple .fa {
+.btn-social.btn-simple .fab {
   font-size: 20px;
   position: relative;
   top: -2px;
@@ -1092,7 +1092,7 @@ fieldset[disabled] .form-control {
   width: 46px;
 }
 
-.dropdown-with-icons i[class^="fa"] {
+.dropdown-with-icons i[class^="fab"] {
   font-size: 14px;
   width: 38px;
 }
@@ -1103,15 +1103,15 @@ fieldset[disabled] .form-control {
 
 .carousel-control .icon-prev,
 .carousel-control .icon-next,
-.carousel-control .fa,
-.carousel-control .fa {
+.carousel-control .fab,
+.carousel-control .fab {
   display: inline-block;
   position: absolute;
   top: 50%;
   z-index: 5;
 }
 
-.carousel-control .fa {
+.carousel-control .fab {
   font-size: 35px;
 }
 
@@ -2805,7 +2805,7 @@ a.carousel-control {
   opacity: 1;
 }
 
-a.carousel-control span.fa {
+a.carousel-control span.fab {
   -webkit-transform: translateY(-50%);
   -moz-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
@@ -4131,7 +4131,7 @@ body.noscroll {
   left: 0;
   width: 40%;
   height: 570px;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: #e2e2e299;
   z-index: 3;
   padding: 20px 20px 20px 60px;
 }
