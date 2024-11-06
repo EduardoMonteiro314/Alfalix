@@ -4547,3 +4547,10 @@ body.noscroll {
 .modal h2 {
   color: #014e96;
 }
+
+@media (max-width: 768px){
+  .sloganText{
+    font-size: .8rem;
+    margin: 0 5px;
+  }
+}
